@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JQuery Example</title>
+</head>
+<body>
+  <h1>jQuery Example</h1>
+
+  <input autofocus placeholder="add item" id="input" />
+
+  <ul id="list">
+  </ul>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    var $input = $('#input');
+
+    $input.on('keyup', function(event){
+      event.preventDefault()
+      if(event.which === 13){  // Enter Key
+        $('#list').append("<li>"+$input.val()+"</li>");
+        $input.val('');
+      }
+    });
+  </script>
+
+  <script src="http://107.170.131.61:35729/livereload.js">// Temp LiveReload</script>
+</body>
+</html>
