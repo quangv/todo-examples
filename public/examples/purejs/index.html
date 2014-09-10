@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PureJS Example</title>
+</head>
+<body>
+  <h1>PureJS Example</h1>
+
+  <input autofocus placeholder="add item" onkeyup="input(event)" />
+
+  <ul id="list">
+  </ul>
+
+  <script>
+    function input(event){
+      if(event.which === 13){  // Enter key
+        var list = document.getElementById('list');
+        var item = document.createElement('li');
+        item.innerText = event.target.value;
+        list.appendChild(item);
+        event.target.value = '';
+      }
+    }
+  </script>
+
+  <script src="http://107.170.131.61:35729/livereload.js">// Temp LiveReload</script>
+</body>
+</html>
