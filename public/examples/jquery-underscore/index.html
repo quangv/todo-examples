@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JQuery+Underscore Example</title>
+</head>
+<body>
+  <h1>JQuery+Underscore Example</h1>
+
+  <input autofocus placeholder="add item" id="input" />
+
+  <ul id="list">
+  </ul>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script>
+    var $input = $('#input');
+    var template = _.template('<li><%=value%></li>');
+
+    $input.on('keyup', function(event){
+      event.preventDefault()
+      if(event.which === 13){  // Enter Key
+        $('#list').append(
+          template({
+            value : $input.val()
+          })
+        );
+        $input.val('');
+      }
+    });
+  </script>
+
+  <script src="http://107.170.131.61:35729/livereload.js">// Temp LiveReload</script>
+</body>
+</html>
